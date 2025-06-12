@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Register - GTC Impulse</title>
+  <link rel="stylesheet" href="../utils/global.css">
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+<main class="register-container">
+  <div class="register-panel card">
+    <header class="register-header">
+      <img src="../assets/gtc-logo.png" alt="GTC Impulse Logo" class="logo" aria-label="GTC Impulse Logo">
+      <h1>Create Account</h1>
+    </header>
+    <form id="register-form" aria-labelledby="register-title">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter email" required aria-label="Email address">
+      </div>
+      <div class="input-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="Enter full name" required aria-label="Full name">
+      </div>
+      <div class="input-group password-container">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required aria-label="Password">
+        <span class="toggle-password" role="button" tabindex="0" aria-label="Toggle password visibility" onclick="togglePassword()">👁️</span>
+      </div>
+      <div id="error-message" class="error-message" role="alert"></div>
+      <div class="action-buttons">
+        <button type="submit" class="btn primary-btn">Register</button>
+        <button type="button" class="btn cancel-btn" onclick="navigateTo('login')">Cancel</button>
+      </div>
+    </form>
+    <div class="links">
+      <a href="../login/login.html" class="link">Already have an account? Sign In</a>
+    </div>
+  </div>
+</main>
+<script src="../utils/global.js"></script>
+<script src="register.js"></script>
+</body>
+</html>

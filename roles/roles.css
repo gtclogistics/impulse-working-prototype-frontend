@@ -1,0 +1,335 @@
+.roles-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+.roles-panel {
+    max-width: 80rem;
+    width: 100%;
+    padding: 2.5rem;
+    transform: translateY(1.25rem);
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.roles-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 4rem;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #000000;
+    flex: 1;
+}
+
+.new-role-btn {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-role-btn:hover {
+    background-color: #333333;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.role-item {
+    background-color: #f5f5f5;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.role-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.role-header:hover {
+    background-color: #e5e5e5;
+}
+
+.role-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #000000;
+}
+
+.toggle-icon {
+    font-size: 1.25rem;
+    color: #8e8e93;
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon.open {
+    transform: rotate(180deg);
+}
+
+.role-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1.25rem;
+}
+
+.role-details.open {
+    max-height: 20rem;
+    padding: 1.25rem;
+}
+
+.permissions-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.permission-item {
+    background-color: #d1d1d1;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.scan-statuses {
+    font-size: 0.875rem;
+    color: #8e8e93;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.edit-btn:hover {
+    background-color: #333333;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 1rem;
+    min-height: 1.5rem;
+    margin: 1.5rem 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .roles-panel {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        height: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .roles-container {
+        padding: 1.5rem;
+    }
+
+    .roles-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .new-role-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .role-name {
+        font-size: 1.125rem;
+    }
+
+    .permissions-list {
+        gap: 0.375rem;
+    }
+
+    .permission-item {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .roles-panel {
+        padding: 1rem;
+    }
+
+    .logo {
+        height: 3rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .role-header {
+        padding: 1rem;
+    }
+
+    .role-details.open {
+        max-height: 30rem;
+        padding: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .roles-container {
+        background-color: #000000;
+    }
+
+    .roles-panel {
+        background-color: #333333;
+    }
+
+    h1,
+    .role-name,
+    .permission-item {
+        color: #ffffff;
+    }
+
+    .role-item,
+    .role-header {
+        background-color: #1c1c1e;
+        border-color: #636366;
+    }
+
+    .role-header:hover {
+        background-color: #2c2c2e;
+    }
+
+    .permissions-list {
+        background-color: #333333;
+    }
+
+    .permission-item {
+        background-color: #636366;
+    }
+
+    .scan-statuses,
+    .toggle-icon {
+        color: #8e8e93;
+    }
+
+    .new-role-btn,
+    .edit-btn {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .new-role-btn:hover,
+    .edit-btn:hover {
+        background-color: #d1d1d1;
+        box-shadow: 0 0.25rem 0.75rem rgba(255, 255, 255, 0.2);
+    }
+
+    .delete-btn {
+        background-color: #ff6666;
+    }
+
+    .delete-btn:hover {
+        background-color: #ff3333;
+        box-shadow: 0 0.25rem 0.75rem rgba(255, 255, 255, 0.2);
+    }
+
+    .error-message {
+        color: #ff6666;
+    }
+}

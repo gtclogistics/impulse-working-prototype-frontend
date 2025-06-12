@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>New Role - GTC Impulse</title>
+  <link rel="stylesheet" href="../utils/global.css">
+  <link rel="stylesheet" href="rolesnew.css">
+</head>
+<body>
+<main class="rolesnew-container">
+  <div class="rolesnew-panel card">
+    <header class="rolesnew-header">
+      <img src="../assets/gtc-logo.png" alt="GTC Impulse Logo" class="logo" aria-label="GTC Impulse Logo">
+      <h1>Create New Role</h1>
+    </header>
+    <form id="new-role-form" aria-labelledby="new-role-title">
+      <div class="input-group">
+        <label for="role-name">Role Name</label>
+        <input type="text" id="role-name" placeholder="Enter role name" required aria-label="Role name">
+      </div>
+      <div class="permissions-group">
+        <h2>Permissions</h2>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="permissions" value="shifts"> Shifts</label>
+          <label><input type="checkbox" name="permissions" value="scheduling"> Scheduling</label>
+          <label><input type="checkbox" name="permissions" value="delivery"> Delivery</label>
+          <label><input type="checkbox" name="permissions" value="routes"> Routes</label>
+          <label><input type="checkbox" name="permissions" value="packages-list"> Packages List</label>
+          <label><input type="checkbox" name="permissions" value="packages-labels"> Packages Labels</label>
+          <label><input type="checkbox" name="permissions" value="package-scan" id="package-scan"> Package Scan</label>
+          <label><input type="checkbox" name="permissions" value="employees"> Employees </label>
+          <label><input type="checkbox" name="permissions" value="roles-and-permissions"> Roles & Permissions</label>
+        </div>
+      </div>
+      <div class="scan-statuses-group" id="scan-statuses-group" style="display: none;">
+        <h2>Scan Statuses</h2>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="scanStatuses" value="to warehouse"> To Warehouse</label>
+          <label><input type="checkbox" name="scanStatuses" value="to sort"> To Sort</label>
+          <label><input type="checkbox" name="scanStatuses" value="to load"> To Load</label>
+        </div>
+      </div>
+      <div id="error-message" class="error-message" role="alert"></div>
+      <div class="action-buttons">
+        <button type="submit" class="btn primary-btn">Create Role</button>
+        <button type="button" class="btn cancel-btn" onclick="navigateTo('roles')">Cancel</button>
+      </div>
+    </form>
+  </div>
+</main>
+<script src="../utils/global.js"></script>
+<script src="rolesnew.js"></script>
+</body>
+</html>

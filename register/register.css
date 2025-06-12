@@ -1,0 +1,279 @@
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+.register-panel {
+    max-width: 28rem;
+    width: 100%;
+    padding: 2.5rem;
+    transform: translateY(1.25rem);
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.register-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 4rem;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #000000;
+    flex: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #d1d1d1;
+    background-color: #ffffff;
+    color: #000000;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8e8e93;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover,
+.toggle-password:focus {
+    color: #000000;
+    outline: none;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 0.875rem;
+    min-height: 1.5rem;
+    margin: 0.5rem 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.primary-btn,
+.cancel-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #333333;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.cancel-btn {
+    background-color: #d1d1d1;
+    color: #000000;
+}
+
+.cancel-btn:hover {
+    background-color: #b0b0b0;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.links {
+    margin-top: 1.25rem;
+    text-align: center;
+}
+
+.link {
+    color: #8e8e93;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link:hover,
+.link:focus {
+    color: #000000;
+    transform: translateY(-0.0625rem);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-panel {
+        padding: 2rem;
+        margin: 0.5rem;
+    }
+
+    .register-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-panel {
+        padding: 1.5rem;
+    }
+
+    .logo {
+        height: 3rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input, .primary-btn, .cancel-btn {
+        font-size: 0.875rem;
+        padding: 0.625rem;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .register-container {
+        background-color: #000000;
+    }
+
+    .register-panel {
+        background-color: #333333;
+    }
+
+    h1, label, input {
+        color: #ffffff;
+    }
+
+    input {
+        background-color: #1c1c1e;
+        border-color: #636366;
+    }
+
+    input:focus {
+        border-color: #ffffff;
+        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
+    }
+
+    .toggle-password {
+        color: #8e8e93;
+    }
+
+    .toggle-password:hover,
+    .toggle-password:focus {
+        color: #ffffff;
+    }
+
+    .error-message {
+        color: #ff6666;
+    }
+
+    .primary-btn {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .primary-btn:hover {
+        background-color: #d1d1d1;
+        box-shadow: 0 0.25rem 0.75rem rgba(255, 255, 255, 0.2);
+    }
+
+    .cancel-btn {
+        background-color: #636366;
+        color: #ffffff;
+    }
+
+    .cancel-btn:hover {
+        background-color: #8e8e93;
+        box-shadow: 0 0.25rem 0.75rem rgba(255, 255, 255, 0.2);
+    }
+
+    .link {
+        color: #8e8e93;
+    }
+
+    .link:hover,
+    .link:focus {
+        color: #ffffff;
+    }
+}

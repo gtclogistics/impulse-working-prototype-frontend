@@ -1,0 +1,311 @@
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+.home-panel {
+    max-width: 90rem;
+    width: 100%;
+    padding: 2.5rem;
+    text-align: center;
+    transform: translateY(1.25rem);
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo {
+    height: 4rem;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.logout-btn {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #333333;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.module-grid {
+    --module-width: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    border-radius: 1.25rem;
+    max-width: calc((var(--module-width) + 2rem) * 7);
+    margin: 0 auto;
+}
+
+.module-grid:has(> :nth-child(-n+3)) {
+    --module-width: 10rem;
+}
+
+.module-grid:has(> :nth-child(-n+5):not(:nth-child(-n+3))) {
+    --module-width: 8rem;
+}
+
+.module-grid:has(> :nth-child(n+6)) {
+    --module-width: 6rem;
+}
+
+.module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: var(--module-width);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.module-icon {
+    width: 6rem;
+    height: 6rem;
+    background-color: #ffffff;
+    border-radius: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #000000;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module:hover .module-icon {
+    background-color: #d1d1d1;
+    transform: translateY(-0.25rem) scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.module-name {
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 1rem;
+    min-height: 1.5rem;
+    margin: 1.5rem 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .home-panel {
+        padding: 2rem;
+    }
+
+    .module-grid {
+        --module-width: 9rem;
+        gap: 1.5rem;
+        max-width: calc((var(--module-width) + 1.5rem) * 6);
+    }
+
+    .module-grid:has(> :nth-child(-n+3)) {
+        --module-width: 9rem;
+    }
+
+    .module-grid:has(> :nth-child(-n+5):not(:nth-child(-n+3))) {
+        --module-width: 7rem;
+    }
+
+    .module-grid:has(> :nth-child(n+6)) {
+        --module-width: 5.5rem;
+    }
+
+    .module-icon {
+        width: 5.5rem;
+        height: 5.5rem;
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        height: 3.5rem;
+    }
+
+    .module-grid {
+        --module-width: 8rem;
+        gap: 1.25rem;
+        max-width: calc((var(--module-width) + 1.25rem) * 5);
+    }
+
+    .module-grid:has(> :nth-child(-n+3)) {
+        --module-width: 8rem;
+    }
+
+    .module-grid:has(> :nth-child(-n+5):not(:nth-child(-n+3))) {
+        --module-width: 6rem;
+    }
+
+    .module-grid:has(> :nth-child(n+6)) {
+        --module-width: 5rem;
+    }
+
+    .module-icon {
+        width: 5rem;
+        height: 5rem;
+        font-size: 2rem;
+    }
+
+    .module-name {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-panel {
+        padding: 1rem;
+    }
+
+    .home-header {
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .logo {
+        height: 3rem;
+    }
+
+    .logout-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .module-grid {
+        --module-width: 6rem;
+        gap: 1rem;
+        max-width: calc((var(--module-width) + 1rem) * 4);
+        padding: 1rem;
+    }
+
+    .module-grid:has(> :nth-child(-n+3)) {
+        --module-width: 6rem;
+    }
+
+    .module-grid:has(> :nth-child(-n+5):not(:nth-child(-n+3))) {
+        --module-width: 5rem;
+    }
+
+    .module-grid:has(> :nth-child(n+6)) {
+        --module-width: 4.5rem;
+    }
+
+    .module-icon {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.75rem;
+    }
+
+    .module-name {
+        font-size: 0.75rem;
+    }
+
+    .error-message {
+        font-size: 0.875rem;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .home-container {
+        background-color: #000000;
+    }
+
+    .home-panel {
+        background-color: transparent;
+    }
+
+    .module-grid {
+        background-color: #333333;
+    }
+
+    h1,
+    .module-name {
+        color: #ffffff;
+    }
+
+    .module-icon {
+        background-color: #1c1c1e;
+        color: #ffffff;
+    }
+
+    .module:hover .module-icon {
+        background-color: #636366;
+        box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.2);
+    }
+
+    .logout-btn {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .logout-btn:hover {
+        background-color: #d1d1d1;
+        box-shadow: 0 0.25rem 0.75rem rgba(255, 255, 255, 0.2);
+    }
+
+    .error-message {
+        color: #ff6666;
+    }
+}

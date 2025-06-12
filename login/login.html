@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Sign In - GTC Impulse</title>
+    <link rel="stylesheet" href="../utils/global.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<main class="login-container">
+    <div class="login-panel card">
+        <img src="../assets/gtc-logo.png" alt="GTC Impulse Logo" class="logo" aria-label="GTC Impulse Logo">
+        <h1>Sign In to GTC Impulse</h1>
+        <form id="login-form" aria-labelledby="login-title">
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required aria-label="Email address">
+            </div>
+            <div class="input-group password-container">
+                <input type="password" id="password" placeholder="Password" required aria-label="Password">
+                <span class="toggle-password" role="button" tabindex="0" aria-label="Toggle password visibility" onclick="togglePassword()">👁️</span>
+            </div>
+            <div id="error-message" class="error-message" role="alert"></div>
+            <button type="submit" class="btn primary-btn">Sign In</button>
+        </form>
+        <div class="links">
+<!--            <a href="../forgotpassword/forgotpassword.html" class="link">Forgot Password?</a>-->
+            <a href="../register/register.html" class="link">Create Account</a>
+        </div>
+    </div>
+</main>
+<script src="../utils/global.js"></script>
+<script src="login.js"></script>
+</body>
+</html>
